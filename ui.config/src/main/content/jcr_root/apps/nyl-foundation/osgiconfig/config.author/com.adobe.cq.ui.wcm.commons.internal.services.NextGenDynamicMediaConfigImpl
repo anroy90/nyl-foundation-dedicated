@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "imsClient": "$[env:ASSET_DELIVERY_IMS_CLIENT]",
   "imsOrg": "46BB0B155B2778F40A495EEA@AdobeOrg",
   "repositoryId": "$[env:ASSET_DELIVERY_REPOSITORY_ID]"
