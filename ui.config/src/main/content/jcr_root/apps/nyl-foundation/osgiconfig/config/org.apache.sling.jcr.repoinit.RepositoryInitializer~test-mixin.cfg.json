@@ -1,4 +1,0 @@
-scripts=[
-   "## Create secure page for elevate
-   create path /content/nyl-foundation/us/en/elevate(cq:Page mixin granite:AuthenticationRequired,rep:CugMixin)
-   create path /content/nyl-foundation/us/en/elevate/jcr:content(cq:PageContent)"]
