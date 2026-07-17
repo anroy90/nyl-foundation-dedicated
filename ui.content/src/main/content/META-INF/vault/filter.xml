@@ -8,4 +8,6 @@
     </filter>
     <filter root="/content/dam/nyl-foundation/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/nyl-foundation" mode="merge"/>
+	<filter root="/conf/global/settings/workflow/models/dam-xmp-writeback"/>
+    <filter root="/var/workflow/models/dam-xmp-writeback"/>
 </workspaceFilter>
