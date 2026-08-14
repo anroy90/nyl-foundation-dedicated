@@ -72,7 +72,7 @@
                         <jackrabbit-filter>
                             <options>
                                 <validRoots>
-                                    /oak:index/damAssetLucene-13-custom-1,
+                                    /oak:index/damAssetLucene-13-custom-2,
                                     /oak:index/ntFolderDamLucene-10-custom-1,
                                 </validRoots>
                             </options>
