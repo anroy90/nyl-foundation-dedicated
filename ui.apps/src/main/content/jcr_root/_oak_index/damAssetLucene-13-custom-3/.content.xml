@@ -68,7 +68,7 @@
                     </synonym.txt>
                 </Synonym>
                 <WordDelimiterGraph 
-                    jcr:primaryType="nt:unstructured" splitOnCaseChange="{Long}1" generateWordParts="{Long}1" preserveOriginal="{Long}1"/>
+                    jcr:primaryType="nt:unstructured" splitOnCaseChange="{Long}0" generateWordParts="{Long}1" preserveOriginal="{Long}1"/>
                 <PorterStem jcr:primaryType="nt:unstructured" />
                 <LowerCase jcr:primaryType="nt:unstructured" />
             </filters>
