@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:dam="http://www.day.com/dam/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0"
+	xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="oak:QueryIndexDefinition"
+    async="[async,nrt]"
+    compatVersion="{Long}2"
+    evaluatePathRestrictions="{Boolean}true"
+    includedPaths="[/content/dam]"
+    info="Indexes DAM folders for listing and bootstrap workflows using stable created/date and path sorting."
+    queryPaths="[/content/dam]"
+    reindex="{Boolean}false"
+    reindexCount="{Long}5"
+    tags="[assetsListing,assetsOmnisearch]"
+    type="lucene">
+	<aggregates jcr:primaryType="nt:unstructured">
+		<nt:folder jcr:primaryType="nt:unstructured">
+			<include0
+                    jcr:primaryType="nt:unstructured"
+                    path="jcr:content"/>
+		</nt:folder>
+	</aggregates>
+	<indexRules jcr:primaryType="nt:unstructured">
+		<nt:folder jcr:primaryType="nt:unstructured">
+			<properties jcr:primaryType="nt:unstructured">
+				<jcrTitle
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/jcr:title"
+                        nodeScopeIndex="{Boolean}true"
+                        useInSpellcheck="{Boolean}true"
+                        useInSuggest="{Boolean}true"/>
+				<jcrCreated
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:created"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"
+                        type="Date"/>
+				<jcrPath
+                        jcr:primaryType="nt:unstructured"
+                        function="fn:path()"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"
+                        type="String"/>
+				<brandPortalReplicationAction
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/dam:portalReplicationAction"
+                        propertyIndex="{Boolean}true"/>
+				<nodeName
+                        jcr:primaryType="nt:unstructured"
+                        function="fn:lower-case(fn:name())"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"/>
+				<createModifiedCombined
+                        jcr:primaryType="nt:unstructured"
+                        function="fn:coalesce(jcr:content/@jcr:lastModified, @jcr:created)"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"/>
+				<cqDiscardState
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/cq:discardState"
+                        propertyIndex="{Boolean}true"/>
+				<cloudSourcingEnabled
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/cloudSourcingEnabled"
+                        propertyIndex="{Boolean}true"
+                        type="Boolean"/>
+				<cloudSourcingUsers
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/cloudSourcingUsers"
+                        propertyIndex="{Boolean}true"/>
+				<title
+                        jcr:primaryType="nt:unstructured"
+                        function="fn:lower-case(fn:coalesce(jcr:content/metadata/@dc:title, jcr:content/@jcr:title))"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"/>
+				<cqDiscardedBy
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/cq:discardedBy"
+                        propertyIndex="{Boolean}true"/>
+				<cqDiscardDate
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/cq:discardDate"
+                        ordered="{Boolean}true"
+                        propertyIndex="{Boolean}true"
+                        type="Date"/>
+				<folderMetadataSchema
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/folderMetadataSchema"
+                        propertyIndex="{Boolean}true"
+                        type="String"/>
+				<damMetadataForm
+                        jcr:primaryType="nt:unstructured"
+                        name="jcr:content/dam:metadataForm"
+                        propertyIndex="{Boolean}true"
+                        type="String"/>
+                <wfReferenceNumber
+                    jcr:primaryType="nt:unstructured"
+                    name="wfReferenceNumber"
+                    propertyIndex="{Boolean}true"/>
+			</properties>
+		</nt:folder>
+	</indexRules>
+</jcr:root>

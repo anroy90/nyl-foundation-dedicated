@@ -3,4 +3,7 @@
     <filter root="/apps/nyl-foundation/clientlibs"/>
     <filter root="/apps/nyl-foundation/components"/>
     <filter root="/apps/nyl-foundation/i18n"/>
+    <!-- Custom Oak index roots (ONLY roots allowed) -->
+    <filter root="/oak:index/damAssetLucene-13-custom-1" />
+    <filter root="/oak:index/ntFolderDamLucene-10-custom-1" />
 </workspaceFilter>

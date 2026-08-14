@@ -53,13 +53,31 @@
                     </properties>
                     <group>com.nyl.foundation</group>
                     <name>nyl-foundation.ui.apps</name>
-                    <packageType>application</packageType>
+                    <packageType>mixed</packageType>
+                    <allowIndexDefinitions>true</allowIndexDefinitions>
+                    <showImportPackageReport>false</showImportPackageReport>
                     <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>com.nyl.foundation</groupId>
                             <artifactId>nyl-foundation.ui.apps.structure</artifactId>
                         </repositoryStructurePackage>
                     </repositoryStructurePackages>
+					<validatorsSettings>
+                        <jackrabbit-nodetypes>
+                            <isDisabled>true</isDisabled>
+                        </jackrabbit-nodetypes>
+                        <jackrabbit-packagetype>
+                            <isDisabled>true</isDisabled>
+                        </jackrabbit-packagetype>
+                        <jackrabbit-filter>
+                            <options>
+                                <validRoots>
+                                    /oak:index/damAssetLucene-13-custom-1,
+                                    /oak:index/ntFolderDamLucene-10-custom-1,
+                                </validRoots>
+                            </options>
+                        </jackrabbit-filter>
+                    </validatorsSettings>
                     <dependencies>
                         <dependency>
                             <groupId>com.adobe.cq</groupId>
